@@ -1,0 +1,15 @@
+{
+  "image_samples": [
+    {
+      "scene_context": {
+        "shot_type": "Establishing Shot",
+        "description": "Wide view of A SENTRY TOWER",
+        "location": "A SENTRY TOWER",
+        "characters": [],
+        "lighting": "Natural night lighting"
+      },
+      "prompt": "Create a establishing shot of Wide view of A SENTRY TOWER in A SENTRY TOWER with Natural night lighting",
+      "image_path": "images/scene_2_shot_1.png"
+    }
+  ]
+}

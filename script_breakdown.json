@@ -1,0 +1,159 @@
+{
+    "title": "கடைசி தீர்மானம்",
+    "scenes": [
+        {
+            "scene_number": 1,
+            "location": "காவல் நிலையம்",
+            "time": "இரவு",
+            "weather": "",
+            "characters": [
+                "கார்த்திக்",
+                "ரகுநாத்"
+            ],
+            "props": [
+                "மேசை",
+                "நாற்காலிகள்",
+                "கோப்பு",
+                "புகைப்படம்",
+                "மின்விளக்கு"
+            ],
+            "summary": "Inspector Karthik interrogates a witness named Ragunath in a dimly lit room about a case they have been investigating for three years. When shown a photograph, Ragunath's hands tremble as he reluctantly identifies the man as his brother.",
+            "audio": "",
+            "action": [
+                "சிறிய, மங்கலான விசாரணை அறை. ஒரு மேசை, இரண்டு நாற்காலிகள். சுவரில் பழைய மின்விளக்கு மினுமினுக்கிறது.",
+                "ஆய்வாளர் கார்த்திக் களைத்த முகத்துடன் கோப்பை திறக்கிறார்.",
+                "எதிரே அமர்ந்திருக்கும் சாட்சி ரகுநாத் தலையை குனிகிறான்.",
+                "கார்த்திக் மேசையில் ஒரு புகைப்படத்தை வைக்கிறார்.",
+                "ரகுநாத் புகைப்படத்தை பார்க்கிறான். கைகள் நடுங்குகின்றன."
+            ],
+            "dialogues": [
+                {
+                    "character": "கார்த்திக்",
+                    "line": "(சோர்வாக) மூன்று வருஷமா தேடுறோம். இன்னைக்கு கட்டாயம் பதில் சொல்லணும்.",
+                    "shots": [
+                        "Medium Shot - Inspector Karthik opening the case file with a tired expression.",
+                        "Close-up - Karthik's weary face as he delivers the line demanding answers."
+                    ]
+                },
+                {
+                    "character": "ரகுநாத்",
+                    "line": "நான் எதுவும் பார்க்கலை சார்.",
+                    "shots": [
+                        "Close-up - Ragunath keeping his head bowed down, avoiding eye contact."
+                    ]
+                },
+                {
+                    "character": "கார்த்திக்",
+                    "line": "இந்த ஆளை பார்த்திருக்கீங்களா?",
+                    "shots": [
+                        "Over-the-Shoulder Shot - Karthik placing a photograph on the table in front of Ragunath.",
+                        "Close-up - The photograph on the table under the dim light."
+                    ]
+                },
+                {
+                    "character": "ரகுநாத்",
+                    "line": "(மெதுவாக) இது... இது என் அண்ணன்.",
+                    "shots": [
+                        "Extreme Close-up - Ragunath's trembling hands touching the photograph.",
+                        "Close-up - Ragunath's face showing fear and realization as he speaks."
+                    ]
+                }
+            ]
+        },
+        {
+            "scene_number": 2,
+            "location": "துறைமுகம்",
+            "time": "அதிகாலை",
+            "weather": "மூடுபனி",
+            "characters": [
+                "கார்த்திக்",
+                "குரல்"
+            ],
+            "props": [
+                "போன்"
+            ],
+            "summary": "Karthik stands alone at a foggy harbor early in the morning. He receives a phone call from an unknown caller informing him that the suspect is still alive, leaving him deeply shocked.",
+            "audio": "கடல் அலைகள் கரையில் மோதும் சத்தம், போன் ரிங் டோன் சத்தம்",
+            "action": [
+                "கடல் அலைகள் கரையில் மோதுகின்றன. மூடுபனி கவிந்திருக்கிறது.",
+                "கார்த்திக் தனியாக நிற்கிறார். போன் அடிக்கிறது.",
+                "கார்த்திக் திடுக்கிடுகிறார். கண்கள் அகலுகின்றன."
+            ],
+            "dialogues": [
+                {
+                    "character": "கார்த்திக்",
+                    "line": "(போனில்) என்ன கண்டுபிடிச்ச?",
+                    "shots": [
+                        "Wide Shot - Karthik standing alone in the foggy harbor landscape.",
+                        "Medium Close-up - Karthik answering his phone with anticipation."
+                    ]
+                },
+                {
+                    "character": "குரல்",
+                    "line": "(போனில்) சார்... அவன் இன்னும் உயிரோட இருக்கான்.",
+                    "shots": [
+                        "Close-up - Karthik's face turning pale in absolute shock.",
+                        "Extreme Close-up - Karthik's eyes widening as the revelation sinks in."
+                    ]
+                }
+            ]
+        },
+        {
+            "scene_number": 3,
+            "location": "பழைய கிடங்கு",
+            "time": "இரவு",
+            "weather": "",
+            "characters": [
+                "விக்ரம்",
+                "கார்த்திக்"
+            ],
+            "props": [
+                "நாற்காலி",
+                "துப்பாக்கி"
+            ],
+            "summary": "Karthik enters a dark, abandoned warehouse where Vikram is tied to a chair. Vikram reveals that he orchestrated everything because he wanted Karthik to know the truth, prompting Karthik to lower his weapon.",
+            "audio": "",
+            "action": [
+                "இருட்டான பெரிய கிடங்கு. நடுவே ஒரு நாற்காலியில் கட்டப்பட்டிருக்கிறான் விக்ரம்.",
+                "கார்த்திக் உள்ளே நுழைகிறார். கையில் துப்பாக்கி.",
+                "அமைதி. கார்த்திக் மெதுவாக துப்பாக்கியை கீழே வைக்கிறார்.",
+                "திரை இருளடைகிறது. முடிவு."
+            ],
+            "dialogues": [
+                {
+                    "character": "விக்ரம்",
+                    "line": "(சிரிக்கிறான்) வந்துட்டீங்களா சார். எதிர்பார்த்தேன்.",
+                    "shots": [
+                        "Medium Shot - Vikram tied to the chair in the center of the dark warehouse, smiling.",
+                        "Close-up - Vikram's confident and slightly mocking smile."
+                    ]
+                },
+                {
+                    "character": "கார்த்திக்",
+                    "line": "(கோபமாக) மூன்று வருஷமா என்னோட பின்னாடி நீ தான் இருந்தே. ஏன்?",
+                    "shots": [
+                        "Medium Shot - Karthik walking in, aiming his gun at Vikram with intense anger.",
+                        "Close-up - Karthik's furious face demanding an explanation."
+                    ]
+                },
+                {
+                    "character": "விக்ரம்",
+                    "line": "(தீவிரமாக) ஏன்னா... நீங்க மட்டும் தான் உண்மையை தெரிஞ்சுக்கணும்னு விரும்பினேன்.",
+                    "shots": [
+                        "Close-up - Vikram's expression shifting to earnest seriousness.",
+                        "Medium Shot - The tense standoff between Karthik and Vikram."
+                    ]
+                },
+                {
+                    "character": "கார்த்திக்",
+                    "line": "(புரிந்துகொண்டவராக) சொல்லு. எல்லாத்தையும் சொல்லு.",
+                    "shots": [
+                        "Medium Shot - Karthik slowly lowering his gun as he decides to listen.",
+                        "Extreme Close-up - Karthik's eyes showing a mix of fatigue, understanding, and curiosity.",
+                        "Wide Shot - The screen slowly fading to black as the conversation begins."
+                    ]
+                }
+            ]
+        }
+    ]
+}
