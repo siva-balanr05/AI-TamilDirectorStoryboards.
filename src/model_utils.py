@@ -95,3 +95,58 @@ def generate_image(prompt: str, output_path: str) -> bool:
             logf.write(f"General error: {str(e)}\nPrompt: {prompt}\n\n")
         print(f"Error generating image: {str(e)}, see stability_image_error.log for details.")
         return False
+
+
+
+def build_cinematic_image_prompt(scene: dict, shot_detail: str = None) -> str:
+    """
+    Synthesize complete scene data (all actions, dialogues, characters,
+    weather, time, location, props, and camera shot) into a photorealistic
+    SDXL visual prompt using Gemini.
+    """
+    actions_list = scene.get("action", [])
+    actions_text = " ".join(actions_list) if isinstance(actions_list, list) else str(actions_list)
+    
+    dialogues_list = scene.get("dialogues", [])
+    dlg_text = ""
+    if isinstance(dialogues_list, list):
+        dlg_text = " | ".join(f"{d.get('character', '')}: {d.get('line', '')}" for d in dialogues_list if isinstance(d, dict))
+        
+    shot_focus = shot_detail if shot_detail else "Master Dramatic Scene Shot, 35mm film lens"
+    
+    prompt = f"""You are an elite film director and AI storyboard prompt engineer.
+Convert this screenplay scene into a single, detailed, photorealistic visual image prompt for Stable Diffusion XL.
+
+SCENE DATA:
+- Location: {scene.get('location', '')}
+- Time of Day: {scene.get('time', '')}
+- Weather & Atmosphere: {scene.get('weather', '')}
+- Audio/Lighting Cues: {scene.get('audio', '')}
+- Characters: {', '.join(scene.get('characters', []))}
+- Props: {', '.join(scene.get('props', []))}
+- Scene Summary: {scene.get('summary', '')}
+- All Scene Actions: {actions_text}
+- Dialogues & Emotional Beats: {dlg_text}
+- Target Camera Framing & Shot: {shot_focus}
+
+REQUIREMENTS FOR SDXL PROMPT:
+1. Translate all concepts into descriptive visual English.
+2. Explicitly specify the exact time of day (day/night/dusk) and weather (e.g. rain pouring through windows, lightning flashes, shadows).
+3. Specify environment (interior/exterior, set dressing, props, swinging bulbs, dirt/dust).
+4. Visually describe character age, ethnicity (South Indian / Tamil cinema aesthetic), physical appearance, clothing, facial expressions (tears, empathy, anger), postures, and specific actions.
+5. Translate spoken dialogue into physical expressions, eye contact, and gestures (NEVER put quotes or script lines).
+6. Under 110 words. End with: 'cinematic film still, 35mm photography, dramatic Indian cinema lighting, high contrast, photorealistic, 8k, 16:9 widescreen'.
+Return ONLY the prompt string, no markdown, no intro."""
+
+    try:
+        synth = generate_text(prompt, max_length=1024)
+        if synth and len(synth.strip()) > 20:
+            synth = synth.replace('```', '').replace('"', '').strip()
+            return synth
+    except Exception as e:
+        print(f"Error synthesizing image prompt: {e}")
+        
+    # Fallback prompt construction if LLM call fails
+    loc = scene.get('location', 'cinema scene')
+    summary = scene.get('summary', '')
+    return f"Cinematic Indian film still. {summary}. Location: {loc}. Dramatic lighting, 35mm film photography, 16:9 widescreen, photorealistic, 8k."

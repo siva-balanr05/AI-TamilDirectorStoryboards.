@@ -42,6 +42,11 @@ Use this exact JSON structure:
   ]
 }
 
+CRITICAL RULES:
+- For EVERY dialogue item, you MUST provide at least 1 or 2 specific cinematic camera shots in the "shots" array (e.g. "Close-up - camera captures tearful eyes and trembling lips", "Medium Two-Shot - capturing the dynamic confrontation"). DO NOT leave "shots" empty.
+- Extract ALL meaningful actions into the "action" array in sequential order.
+- Provide a clear, detailed 2-3 sentence summary in English.
+
 Return ONLY the JSON. No other text.""",
             'shot_prompt': """You are an experienced cinematographer. Analyze this scene and return ONLY a valid JSON object with no extra text.
 

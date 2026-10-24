@@ -1,156 +1,136 @@
 {
-    "title": "கடைசி தீர்மானம்",
+    "title": "நம்பிக்கையின் பாதை",
     "scenes": [
         {
             "scene_number": 1,
-            "location": "காவல் நிலையம்",
-            "time": "இரவு",
-            "weather": "",
+            "location": "மதுரையின் கிராமத்து ரயில் நிலையம்",
+            "time": "அதிகாலை",
+            "weather": "பனி மூட்டம்",
             "characters": [
-                "கார்த்திக்",
-                "ரகுநாத்"
+                "வேலன்",
+                "மீனாட்சி"
             ],
             "props": [
-                "மேசை",
-                "நாற்காலிகள்",
-                "கோப்பு",
-                "புகைப்படம்",
-                "மின்விளக்கு"
+                "பெரிய பை",
+                "பழைய இரும்பு பெஞ்ச்",
+                "பித்தளை டிபன் பாக்ஸ்",
+                "ரயில்"
             ],
-            "summary": "Inspector Karthik interrogates a witness named Ragunath in a dimly lit room about a case they have been investigating for three years. When shown a photograph, Ragunath's hands tremble as he reluctantly identifies the man as his brother.",
-            "audio": "",
+            "summary": "At a foggy village railway station in Madurai, Velan receives blessings from his mother, Meenatchi, who tearfully hands him a tiffin box and implores him to become an honest police officer in Chennai. Velan promises to fulfill her dream as a train slowly pulls into the platform. He boards the train and waves goodbye to his mother from the window.",
+            "audio": "குளிர்ந்த காற்றின் சத்தம், தூரத்தில் ரயில் ஹாரன் ஒலி",
             "action": [
-                "சிறிய, மங்கலான விசாரணை அறை. ஒரு மேசை, இரண்டு நாற்காலிகள். சுவரில் பழைய மின்விளக்கு மினுமினுக்கிறது.",
-                "ஆய்வாளர் கார்த்திக் களைத்த முகத்துடன் கோப்பை திறக்கிறார்.",
-                "எதிரே அமர்ந்திருக்கும் சாட்சி ரகுநாத் தலையை குனிகிறான்.",
-                "கார்த்திக் மேசையில் ஒரு புகைப்படத்தை வைக்கிறார்.",
-                "ரகுநாத் புகைப்படத்தை பார்க்கிறான். கைகள் நடுங்குகின்றன."
+                "வேலன் தன் தாய் மீனாட்சியின் காலில் விழுந்து ஆசீர்வாதம் வாங்குகிறான்.",
+                "மீனாட்சி கண்ணீருடன் தன் மகனை எழுப்புகிறாள்.",
+                "மீனாட்சி ஒரு பித்தளை டிபன் பாக்ஸை வேலன் கையில் கொடுக்கிறாள்.",
+                "வேலன் அவளது கைகளைப் பிடிக்கிறான்.",
+                "தூரத்தில் புகையை கக்கிக்கொண்டு ரயில் ஹாரன் அடித்து மெதுவாக பிளாட்பார்மிற்குள் நுழைகிறது.",
+                "வேலன் ரயிலில் ஏறுகிறான்.",
+                "வேலன் ஜன்னல் வழியே தாயைப் பார்த்து கையசைக்கிறான்."
             ],
             "dialogues": [
                 {
-                    "character": "கார்த்திக்",
-                    "line": "(சோர்வாக) மூன்று வருஷமா தேடுறோம். இன்னைக்கு கட்டாயம் பதில் சொல்லணும்.",
+                    "character": "மீனாட்சி",
+                    "line": "சென்னையில பெரிய போலீஸ் அதிகாரியா ஆகி திரும்பி வரணும் வேலன்... நேர்மைய மட்டும் எப்பவும் விட்றாதே",
                     "shots": [
-                        "Medium Shot - Inspector Karthik opening the case file with a tired expression.",
-                        "Close-up - Karthik's weary face as he delivers the line demanding answers."
+                        "Close-up - மீனாட்சியின் கண்ணீருடன் கூடிய உறுதியான முகம் மற்றும் டிபன் பாக்ஸை கொடுக்கும் கைகள்.",
+                        "Medium Shot - வேலன் மற்றும் மீனாட்சி இடையே உள்ள தாய்மைப் பிணைப்பைக் காட்டும் காட்சி."
                     ]
                 },
                 {
-                    "character": "ரகுநாத்",
-                    "line": "நான் எதுவும் பார்க்கலை சார்.",
+                    "character": "வேலன்",
+                    "line": "கண்டிப்பா அம்மா, உங்க கனவை நான் நிறைவேற்றுவேன்",
                     "shots": [
-                        "Close-up - Ragunath keeping his head bowed down, avoiding eye contact."
-                    ]
-                },
-                {
-                    "character": "கார்த்திக்",
-                    "line": "இந்த ஆளை பார்த்திருக்கீங்களா?",
-                    "shots": [
-                        "Over-the-Shoulder Shot - Karthik placing a photograph on the table in front of Ragunath.",
-                        "Close-up - The photograph on the table under the dim light."
-                    ]
-                },
-                {
-                    "character": "ரகுநாத்",
-                    "line": "(மெதுவாக) இது... இது என் அண்ணன்.",
-                    "shots": [
-                        "Extreme Close-up - Ragunath's trembling hands touching the photograph.",
-                        "Close-up - Ragunath's face showing fear and realization as he speaks."
+                        "Close-up - வேலனின் கண்களில் தெரியும் உறுதி மற்றும் நம்பிக்கையான பார்வை.",
+                        "Over-the-shoulder Shot - மீனாட்சியின் தோள்பட்டை வழியாக வேலனின் முகத்தை மையப்படுத்தி, அவனது உறுதிப்பாட்டைக் காட்டுகிறது."
                     ]
                 }
             ]
         },
         {
             "scene_number": 2,
-            "location": "துறைமுகம்",
-            "time": "அதிகாலை",
-            "weather": "மூடுபனி",
+            "location": "சென்னையின் நெரிசலான பாரிமுனை வீதி",
+            "time": "பகல்",
+            "weather": "கடுமையான வெயில்",
             "characters": [
-                "கார்த்திக்",
-                "குரல்"
+                "வேலன்",
+                "சிறுவன்"
             ],
             "props": [
-                "போன்"
+                "கனத்த தோள்பை",
+                "காகிதம்",
+                "பணப்பை",
+                "சான்றிதழ் கோப்பு",
+                "வாகனங்கள்",
+                "காய்கறி கடைகள்",
+                "ஆட்டோக்கள்"
             ],
-            "summary": "Karthik stands alone at a foggy harbor early in the morning. He receives a phone call from an unknown caller informing him that the suspect is still alive, leaving him deeply shocked.",
-            "audio": "கடல் அலைகள் கரையில் மோதும் சத்தம், போன் ரிங் டோன் சத்தம்",
+            "summary": "The next day, Velan navigates the bustling, sun-baked streets of Chennai's Parimunai, carrying his heavy bag and searching for an address. Suddenly, a ragged boy swiftly snatches Velan's wallet and certificate file, disappearing into the crowded street. Velan, shocked, desperately shouts and chases the boy through the maze of vegetable stalls and auto rickshaws.",
+            "audio": "வாகனங்களின் தொடர் சத்தம், மக்களின் கூச்சல்",
             "action": [
-                "கடல் அலைகள் கரையில் மோதுகின்றன. மூடுபனி கவிந்திருக்கிறது.",
-                "கார்த்திக் தனியாக நிற்கிறார். போன் அடிக்கிறது.",
-                "கார்த்திக் திடுக்கிடுகிறார். கண்கள் அகலுகின்றன."
+                "வேலன் தன் கனத்த தோள்பையை சுமந்து கொண்டு முகவரியை காகிதத்தில் தேடியபடி நடந்து செல்கிறான்.",
+                "கந்தல் ஆடை அணிந்த ஒரு சிறுவன் மின்னல் வேகத்தில் ஓடிவருகிறான்.",
+                "சிறுவன் வேலனின் கையில் இருந்த பணப்பையையும் சான்றிதழ் கோப்பையும் பறித்துக்கொண்டு கூட்ட நெரிசலில் ஓடுகிறான்.",
+                "வேலன் அதிர்ச்சியடைகிறான்.",
+                "வேலன் கத்தியபடி சிறுவனை துரத்துகிறான்.",
+                "சிறுவன் காய்கறி கடைகள் மற்றும் ஆட்டோக்களுக்கு இடையே புகுந்து வளைந்து நெளிந்து ஓடுகிறான்."
             ],
             "dialogues": [
                 {
-                    "character": "கார்த்திக்",
-                    "line": "(போனில்) என்ன கண்டுபிடிச்ச?",
+                    "character": "வேலன்",
+                    "line": "டேய் நில்லு! திருடன்... திருடன்... அந்த பையை விட்டுட்டு ஓடு!",
                     "shots": [
-                        "Wide Shot - Karthik standing alone in the foggy harbor landscape.",
-                        "Medium Close-up - Karthik answering his phone with anticipation."
-                    ]
-                },
-                {
-                    "character": "குரல்",
-                    "line": "(போனில்) சார்... அவன் இன்னும் உயிரோட இருக்கான்.",
-                    "shots": [
-                        "Close-up - Karthik's face turning pale in absolute shock.",
-                        "Extreme Close-up - Karthik's eyes widening as the revelation sinks in."
+                        "Medium Shot - வேலனின் அதிர்ச்சியடைந்த மற்றும் கோபமான முகத்தை, கையை நீட்டியபடி துரத்தும் கோணத்தில்.",
+                        "Tracking Shot - வேலன் கூட்ட நெரிசலில் சிறுவனைத் துரத்திச் செல்லும்போது, அவனது அவசரத்தையும் விரக்தியையும் காட்டுகிறது."
                     ]
                 }
             ]
         },
         {
             "scene_number": 3,
-            "location": "பழைய கிடங்கு",
+            "location": "துறைமுகத்திற்கு அருகிலுள்ள ஒரு பாழடைந்த பழைய கிடங்கு",
             "time": "இரவு",
-            "weather": "",
+            "weather": "பலத்த மழை, இடி மின்னல்",
             "characters": [
-                "விக்ரம்",
-                "கார்த்திக்"
+                "வேலன்",
+                "சிறுவன்",
+                "சிறுமி"
             ],
             "props": [
-                "நாற்காலி",
-                "துப்பாக்கி"
+                "உடைந்த ஜன்னல்கள்",
+                "பழைய சாக்குப்பை",
+                "பழைய விளக்கு",
+                "பணப்பை",
+                "சான்றிதழ் கோப்பு",
+                "பணம்"
             ],
-            "summary": "Karthik enters a dark, abandoned warehouse where Vikram is tied to a chair. Vikram reveals that he orchestrated everything because he wanted Karthik to know the truth, prompting Karthik to lower his weapon.",
-            "audio": "",
+            "summary": "Amidst a raging storm, the boy, breathless, huddles in a dilapidated warehouse. Velan bursts in, demanding his belongings, but his anger quickly dissipates upon seeing the boy's fear and his feverish younger sister, shivering on an old sack. Overwhelmed with compassion, Velan reassures the boy, promising to help and offering him money from his pocket as an old lamp sways gently in the wind.",
+            "audio": "சடசடவென பலத்த மழை சத்தம், இடி மின்னல் சத்தம்",
             "action": [
-                "இருட்டான பெரிய கிடங்கு. நடுவே ஒரு நாற்காலியில் கட்டப்பட்டிருக்கிறான் விக்ரம்.",
-                "கார்த்திக் உள்ளே நுழைகிறார். கையில் துப்பாக்கி.",
-                "அமைதி. கார்த்திக் மெதுவாக துப்பாக்கியை கீழே வைக்கிறார்.",
-                "திரை இருளடைகிறது. முடிவு."
+                "ஓடிவந்த சிறுவன் மூச்சிரைக்க ஒரு மூலையில் சுருண்டு அமர்ந்திருக்கிறான்.",
+                "வேலன் கதவை உதைத்து உள்ளே நுழைகிறான்.",
+                "சிறுவன் பயத்தில் நடுங்கி அழத் தொடங்குகிறான்.",
+                "சிறுவன் தரையில் படுத்திருக்கும் சிறுமியை கண்ணீருடன் காட்டுகிறான்.",
+                "அங்கே பழைய சாக்குப்பையில் ஒரு சிறுமி காய்ச்சலில் நடுங்கிக்கொண்டிருக்கிறாள்.",
+                "வேலனின் கோபம் மறைந்து கண்களில் கருணை வழிகிறது.",
+                "வேலன் மெதுவாக சிறுவனின் தலையை வருடுகிறான்.",
+                "வேலன் தன் சட்டைப் பையிலிருந்த பணத்தை எடுத்து நீட்டுகிறான்.",
+                "கிடங்கின் பழைய விளக்கு காற்றில் மெதுவாக ஊசலாடுகிறது."
             ],
             "dialogues": [
                 {
-                    "character": "விக்ரம்",
-                    "line": "(சிரிக்கிறான்) வந்துட்டீங்களா சார். எதிர்பார்த்தேன்.",
+                    "character": "வேலன்",
+                    "line": "பையை கீழே போடுடா!",
                     "shots": [
-                        "Medium Shot - Vikram tied to the chair in the center of the dark warehouse, smiling.",
-                        "Close-up - Vikram's confident and slightly mocking smile."
+                        "Close-up - இடி மின்னலின் வெளிச்சத்தில் வேலனின் கோபமான முகம்.",
+                        "Low Angle Shot - சிறுவனின் பார்வையில் இருந்து, வேலனை மிரட்டும் விதமாக பெரியதாகக் காட்டுகிறது."
                     ]
                 },
                 {
-                    "character": "கார்த்திக்",
-                    "line": "(கோபமாக) மூன்று வருஷமா என்னோட பின்னாடி நீ தான் இருந்தே. ஏன்?",
+                    "character": "சிறுவன்",
+                    "line": "அண்ணா என்னை அடிச்சிடாதீங்க... என் தங்கச்சிக்கு உடம்பு சரியில்லை, மருந்து வாங்கத்தான் இப்படி பண்ணிட்டேன்",
                     "shots": [
-                        "Medium Shot - Karthik walking in, aiming his gun at Vikram with intense anger.",
-                        "Close-up - Karthik's furious face demanding an explanation."
-                    ]
-                },
-                {
-                    "character": "விக்ரம்",
-                    "line": "(தீவிரமாக) ஏன்னா... நீங்க மட்டும் தான் உண்மையை தெரிஞ்சுக்கணும்னு விரும்பினேன்.",
-                    "shots": [
-                        "Close-up - Vikram's expression shifting to earnest seriousness.",
-                        "Medium Shot - The tense standoff between Karthik and Vikram."
-                    ]
-                },
-                {
-                    "character": "கார்த்திக்",
-                    "line": "(புரிந்துகொண்டவராக) சொல்லு. எல்லாத்தையும் சொல்லு.",
-                    "shots": [
-                        "Medium Shot - Karthik slowly lowering his gun as he decides to listen.",
-                        "Extreme Close-up - Karthik's eyes showing a mix of fatigue, understanding, and curiosity.",
-                        "Wide Shot - The screen slowly fading to black as the conversation begins."
+                        "Close-up - சிறுவனின் நடுங்கும் உதடுகள் மற்றும் கண்ணீர் நிறைந்த கண்கள், அவனது அச்சத்தையும் உதவியற்ற நிலையையும் வெளிப்படுத்துகிறது.",
+                        "Medium Shot - சிறுமி படுத்திருக்கும் திசையை சிறுவன் சுட்டிக்காட்டும் காட்சி, அவனது சகோதரிக்கான அக்கறையை வலியுறுத்துகிறது."
                     ]
                 }
             ]

@@ -14,7 +14,7 @@ from streamlit import rerun
 import base64
 import docx2txt
 from PyPDF2 import PdfReader
-from src.model_utils import generate_text, generate_image
+from src.model_utils import generate_text, generate_image, build_cinematic_image_prompt
 from src.language_utils import LanguageManager
 
 def clear_workspace_data(startup=False):
@@ -298,6 +298,8 @@ if "breakdown" not in st.session_state:
     st.session_state.breakdown = None
 if "scene_images" not in st.session_state:
     st.session_state.scene_images = {}  # scene_number -> image path
+if "scene_prompts" not in st.session_state:
+    st.session_state.scene_prompts = {}
 
 st.title("🎬 AI Director — தமிழ்")
 st.markdown("---")
@@ -345,6 +347,7 @@ with col_upload:
         clear_workspace_data()
         st.session_state.breakdown = None
         st.session_state.scene_images = {}
+        st.session_state.scene_prompts = {}
         st.session_state.script_text = ""
         rerun()
 
@@ -446,9 +449,10 @@ else:
                     st.markdown(f"> {a}")
 
             # ── Dialogues + Shots ──
+            available_shots = ["🎬 முதன்மை காட்சி (Master Dramatic Scene Shot)"]
             if dialogues:
                 st.markdown("**💬 உரையாடல்கள் & ஷாட்கள் (Dialogues & Shots)**")
-                for dlg in dialogues:
+                for idx, dlg in enumerate(dialogues):
                     char = dlg.get("character", "")
                     line = dlg.get("line", "")
                     shots = dlg.get("shots", [])
@@ -456,56 +460,58 @@ else:
                     if shots:
                         for shot in shots:
                             st.markdown(f"&nbsp;&nbsp;&nbsp;📷 *{shot}*", unsafe_allow_html=True)
+                            available_shots.append(f"📷 {shot} ({char})")
+                    else:
+                        fallback_shot = f"Close-up - {char} உணர்ச்சி மற்றும் உரையாடல் வெளிப்பாடு"
+                        st.markdown(f"&nbsp;&nbsp;&nbsp;📷 *{fallback_shot}*", unsafe_allow_html=True)
+                        available_shots.append(f"📷 {fallback_shot}")
+                        available_shots.append(f"📷 Medium Shot - {char} இருவர் உரையாடல் மற்றும் நடவடிக்கை")
+
+            # Remove duplicates preserving order
+            seen = set()
+            available_shots = [x for x in available_shots if not (x in seen or seen.add(x))]
 
             st.markdown("---")
 
             # ── Image area ──
             img_key = f"scene_{sn}"
-            img_col, btn_col = st.columns([0.7, 0.3])
-
-            with img_col:
-                saved_path = st.session_state.scene_images.get(img_key)
-                if saved_path and Path(saved_path).exists():
-                    st.image(saved_path, caption=f"காட்சி {sn} — உருவாக்கப்பட்ட படம்",
-                             use_container_width=True)
+            img_col, btn_col = st.columns([0.62, 0.38])
 
             with btn_col:
-                if st.button(f"🖼️ படம் உருவாக்கு\n(Generate Image)", key=f"gen_{img_key}",
-                             use_container_width=True):
-                    # Build a rich English prompt from all scene details
-                    chars_en = ensure_english(", ".join(characters)) if characters else ""
-                    loc_en   = ensure_english(location) if location else ""
-                    summ_en  = summary  # already English
-                    first_action = ensure_english(actions[0]) if actions else ""
-                    first_dlg = ensure_english(dialogues[0].get("line","")) if dialogues else ""
-
-                    image_prompt = (
-                        f"Cinematic Tamil film scene. "
-                        f"Location: {loc_en}. "
-                        f"Time: {time_day}. "
-                        f"Characters: {chars_en}. "
-                        f"{summ_en}. "
-                        f"{first_action}. "
-                        f"Dialogue: '{first_dlg}'. "
-                        f"Style: dramatic Indian cinema lighting, high quality, 16:9 widescreen."
-                    )
-                    image_prompt = clean_prompt(image_prompt)
-
+                selected_shot = st.selectbox(
+                    "🎯 ஷாட் தேர்வு (Select Shot Framing)",
+                    options=available_shots,
+                    key=f"shot_sel_{sn}"
+                )
+                
+                if st.button(f"🖼️ படம் உருவாக்கு\n(Generate Storyboard)", key=f"gen_{img_key}", use_container_width=True):
                     out_dir = Path(f"storyboards/scene_{sn:02d}" if isinstance(sn, int) else f"storyboards/scene_{sn}")
                     out_dir.mkdir(parents=True, exist_ok=True)
                     out_file = out_dir / "scene.png"
 
-                    with st.spinner("படம் உருவாக்குகிறோம்..."):
+                    with st.spinner("முழு திரைக்கதை, உரையாடல் & ஷாட்டை பகுப்பாய்வு செய்து படம் உருவாக்குகிறோம்..."):
                         try:
+                            # Intelligently synthesize prompt from all actions, weather, time, characters, and selected shot
+                            image_prompt = build_cinematic_image_prompt(scene, selected_shot)
+                            st.session_state.scene_prompts[img_key] = image_prompt
+                            
                             success = generate_image(image_prompt, str(out_file))
                             if success and out_file.exists():
                                 st.session_state.scene_images[img_key] = str(out_file)
                                 st.success("✅ படம் தயார்!")
                                 rerun()
                             else:
-                                st.error("படம் உருவாக்க தோல்வி.")
+                                st.error("படம் உருவாக்க தோல்வி. மீண்டும் முயற்சிக்கவும்.")
                         except Exception as e:
                             st.error(f"பிழை: {e}")
+
+            with img_col:
+                saved_path = st.session_state.scene_images.get(img_key)
+                if saved_path and Path(saved_path).exists():
+                    st.image(saved_path, caption=f"காட்சி {sn} — உருவாக்கப்பட்ட படம்", use_container_width=True)
+                    if img_key in st.session_state.scene_prompts:
+                        with st.expander("👁️ AI ஒளிப்பதிவு விளக்கம் (Visual Prompt Used)"):
+                            st.caption(st.session_state.scene_prompts[img_key])
 
 
 

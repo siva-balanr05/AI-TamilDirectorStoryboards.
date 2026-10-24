@@ -1,48 +1,56 @@
-# 🎬 AI Director
+# 🎬 AI Director Pro • Studio 2.5
 
-An intelligent film pre-production assistant that transforms raw scripts into structured scene breakdowns and AI-generated storyboards. Supports Tamil and multilingual scripts with automated shot analysis powered by Google Gemini and Stability AI.
+An intelligent cinematic pre-production suite and screenplay deconstruction studio that transforms raw movie scripts into structured scene breakdowns, director camera shot lists, and photorealistic AI-generated storyboards. Supports **Tamil**, **English**, **Hindi**, and **Telugu** screenplays.
+
+Powered by **Google Gemini** (for screenplay analysis & visual prompt synthesis) and **Stability AI SDXL** (for 16:9 cinematic storyboard frames).
 
 ---
 
 ## ✨ Features
 
-- **📄 Script Ingestion** — Upload scripts as `.txt`, `.pdf`, or `.docx` files
-- **🧠 AI Scene Breakdown** — Automatically extracts scenes, characters, props, locations, time-of-day, audio cues, and action lines
-- **🎞️ Shot List Generation** — Produces professional shot lists with camera types (Close-up, Wide Shot, OTS, etc.), angles, and movement
-- **🖼️ Storyboard Generation** — Generates visual storyboard frames using Stable Diffusion XL via the Stability AI API
-- **🌐 Multilingual Support** — Native support for Tamil scripts; extensible to other Indian and world languages
-- **📦 Dataset Export** — Exports structured JSON datasets for downstream ML training and fine-tuning
-- **🔄 Retry & Rate Limiting** — Exponential backoff with jitter for robust API handling across Gemini model tiers
-- **🗂️ Workspace Management** — Auto-cleans stale session data on startup; supports one-click workspace reset
+- **🎞️ Hollywood NLE Production Studio (React 19 + Tailwind CSS + Vite)**:
+  - **🎬 Viewfinder Monitor Mode**: Real-time camera viewfinder monitor with corner bracket markings, center crosshairs, Rule-of-Thirds grid overlay, and live SMPTE timecode (24 FPS).
+  - **🖼️ Storyboard Deck Mode**: Wall-of-frames visual gallery to preview, generate, and review storyboards for all scenes side-by-side.
+  - **📜 Script Teleprompter Mode**: Industry-standard monospace screenplay reader for rehearsals.
+  - **🎨 4 Studio Themes**: *Midnight Cinema* (Gold/Amber), *Cyber Neo-Noir* (Cyan/Emerald), *Hollywood 35mm* (Crimson/Red), and *Director Titanium* (Monochrome Silver).
+- **⚡ High-Performance FastAPI Backend**:
+  - Script ingestion from `.txt`, `.pdf`, and `.docx` files.
+  - Scene breakdown extraction: locations, time of day, weather, characters, props, audio cues, sequential action beats, and dialogues.
+  - AI Cinematographer Prompt Synthesizer (`build_cinematic_image_prompt`) that converts cultural/dramatic nuances into rich English diffusion prompts.
+- **🎥 Shot Framing & Cinematography Presets**:
+  - Close-up, Extreme Close-up, Medium Two-Shot, Wide Establishing Shot, Low Angle, Dutch Angle, Over-the-Shoulder.
+- **🖼️ 16:9 Widescreen Storyboard Generation**:
+  - High-resolution rendering (`1344x768`) via Stable Diffusion XL (`stable-diffusion-xl-1024-v1-0`).
+  - Fullscreen lightbox mode and one-click frame downloads.
+  - Transparent AI prompt inspector showing the exact synthesized English visual prompt.
+- **🎬 Streamlit Fallback Dashboard**:
+  - Includes `app_new.py` for rapid local prototyping in Streamlit.
 
 ---
 
 ## 🗂️ Project Structure
 
 ```
-aidirector/
-├── Projects/
-│   └── ai-director/
-│       ├── app1.py                    # Main Streamlit application
-│       ├── app_new.py                 # Experimental updated UI
-│       ├── requirements.txt           # Python dependencies
-│       ├── script.txt                 # Sample script file
-│       ├── src/
-│       │   ├── model_utils.py         # Gemini & Stability AI API wrappers
-│       │   ├── language_utils.py      # Multilingual prompt templates
-│       │   ├── dataset_converter.py   # Script → structured dataset converter
-│       │   ├── dataset_converter_new.py
-│       │   └── storyboard_generator.py
-│       └── storyboards/               # Output: generated storyboard images
-├── script_datasets/                   # Sample script analysis JSON datasets
-│   └── a_few_good_men/
-│       ├── script_analysis.json
-│       ├── shot_analysis.json
-│       └── image_generation.json
-├── storyboards/                       # Root-level storyboard outputs
-│   ├── scene_01/
-│   └── scene_02/
-└── script_breakdown.json              # Sample Tamil script breakdown output
+AI-TamilDirectorStoryboards/
+├── backend/
+│   └── server.py                      # FastAPI REST API & static server
+├── frontend/                          # React 19 + Vite + Tailwind CSS Studio
+│   ├── src/
+│   │   ├── App.jsx                    # Hollywood NLE Director Studio UI
+│   │   ├── index.css                  # Custom cinematic dark styling & glows
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js                 # API proxy to localhost:8000
+├── src/
+│   ├── model_utils.py                 # Gemini LLM fallback chain & SDXL generator
+│   ├── language_utils.py              # Multilingual directorial prompts (Tamil/EN/HI/TE)
+│   ├── dataset_converter.py           # Movie script → ML training dataset converter
+│   └── storyboard_generator.py        # Image generator abstraction
+├── app_new.py                         # Streamlit multi-language web app
+├── app1.py                            # Streamlit prototype
+├── requirements.txt                   # Python dependencies
+├── script.txt                         # Sample Tamil screenplay test file
+└── script_breakdown.json              # Latest structured scene breakdown output
 ```
 
 ---
@@ -51,174 +59,102 @@ aidirector/
 
 ### Prerequisites
 
-- Python 3.10+
-- A [Google Gemini API Key](https://aistudio.google.com/app/apikey)
-- A [Stability AI API Key](https://platform.stability.ai/) *(for image generation)*
+- **Python 3.10+**
+- **Node.js 18+** & **npm**
+- [Google Gemini API Key](https://aistudio.google.com/app/apikey)
+- [Stability AI API Key](https://platform.stability.ai/)
 
-### Installation
+---
+
+### 1. Installation
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/siva-balanr05/aidir.git
-cd aidir/Projects/ai-director
+# Clone the repository
+git clone https://github.com/siva-balanr05/AI-TamilDirectorStoryboards..git
+cd AI-TamilDirectorStoryboards.
 
-# 2. Create and activate a virtual environment
+# Setup Python Virtual Environment
 python -m venv .venv
+
 # Windows
 .venv\Scripts\activate
-# macOS/Linux
+# macOS / Linux
 source .venv/bin/activate
 
-# 3. Install dependencies
+# Install backend dependencies
 pip install -r requirements.txt
+
+# Install frontend dependencies
+cd frontend
+npm install
+cd ..
 ```
 
-### Configuration
+---
 
-Create a `.env` file inside `Projects/ai-director/` with your API keys:
+### 2. Environment Configuration
+
+Create a `.env` file in the root directory:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
-STABILITY_API_KEY=your_stability_ai_api_key_here
+STABILITY_API_KEY=your_stability_ai_key_here
 ```
 
-> **Note:** `.env` is git-ignored. Never commit your API keys.
+> **Note:** `.env` is git-ignored for security. Never commit API keys.
 
-### Running the App
+---
+
+### 3. Running the Studio
+
+#### Option A: React Studio + FastAPI (Recommended)
+
+1. **Start the FastAPI Backend:**
+   ```bash
+   uvicorn backend.server:app --host 0.0.0.0 --port 8000 --reload
+   ```
+2. **Start the React Frontend:**
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+3. Open **[http://localhost:5173](http://localhost:5173)** in your browser!
+
+#### Option B: Streamlit Dashboard
 
 ```bash
-cd Projects/ai-director
-streamlit run app1.py
+streamlit run app_new.py
 ```
-
-The app will open at `http://localhost:8501`.
+Opens at **[http://localhost:8501](http://localhost:8501)**.
 
 ---
 
-## 🧩 How It Works
+## 🧩 Workflow Architecture
 
 ```
-Script File (txt/pdf/docx)
-        │
-        ▼
-  Language Detection & Parsing
-        │
-        ▼
-  Gemini AI — Scene Breakdown
-  (location, time, characters, props, dialogues, action)
-        │
-        ▼
-  Gemini AI — Shot List Generation
-  (shot type, angle, movement, dialogue mapping)
-        │
-        ▼
-  Stability AI SDXL — Storyboard Frame Generation
-        │
-        ▼
-  Streamlit UI — Visual Storyboard + JSON Export
-```
-
----
-
-## 🤖 AI Models Used
-
-| Purpose              | Model / API                          |
-|----------------------|--------------------------------------|
-| Script analysis      | `gemini-2.5-flash` (with fallback chain) |
-| Shot list generation | `gemini-2.0-flash-lite`, `gemini-2.0-flash` |
-| Storyboard images    | Stability AI — `stable-diffusion-xl-1024-v1-0` |
-
-The Gemini integration uses a **multi-tier fallback chain** — if one model hits its daily quota, the next model in the list is tried automatically.
-
----
-
-## 🌐 Language Support
-
-| Language | Status          |
-|----------|-----------------|
-| Tamil (தமிழ்)   | ✅ Full support |
-| English  | ✅ Full support |
-| Hindi    | 🔄 Extensible   |
-| Others   | 🔄 Extensible   |
-
-Language-specific prompt templates are defined in [`src/language_utils.py`](Projects/ai-director/src/language_utils.py). Adding a new language only requires adding an entry to `SUPPORTED_LANGUAGES`.
-
----
-
-## 📊 Sample Output
-
-The `script_breakdown.json` at the root contains a sample breakdown of a Tamil thriller script *"கடைசி தீர்மானம்"* (The Final Decision) — demonstrating the structured JSON output with scenes, dialogues, and shot recommendations.
-
-```json
-{
-  "title": "கடைசி தீர்மானம்",
-  "scenes": [
-    {
-      "scene_number": 1,
-      "location": "காவல் நிலையம்",
-      "time": "இரவு",
-      "characters": ["கார்த்திக்", "ரகுநாத்"],
-      "dialogues": [
-        {
-          "character": "கார்த்திக்",
-          "line": "மூன்று வருஷமா தேடுறோம். இன்னைக்கு கட்டாயம் பதில் சொல்லணும்.",
-          "shots": [
-            "Medium Shot - Inspector Karthik opening the case file with a tired expression.",
-            "Close-up - Karthik's weary face as he delivers the line."
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
-
----
-
-## 📦 Dependencies
-
-| Package            | Purpose                               |
-|--------------------|---------------------------------------|
-| `streamlit`        | Web UI framework                      |
-| `google-generativeai` | Gemini API client                  |
-| `requests`         | Stability AI HTTP calls               |
-| `python-dotenv`    | Environment variable management       |
-| `docx2txt`         | Word document parsing                 |
-| `PyPDF2`           | PDF script parsing                    |
-| `Pillow`           | Image processing                      |
-| `torch` + `transformers` | Local model support (optional)  |
-
----
-
-## 🔒 Security
-
-- API keys are loaded exclusively from `.env` via `python-dotenv`
-- `.env` is listed in `.gitignore` — never committed
-- The `storyboards/` output directory is also git-ignored
-
----
-
-## 🛠️ Development
-
-```bash
-# Run with hot-reload
-streamlit run app1.py --server.runOnSave true
-
-# Lint
-pip install ruff
-ruff check src/
+Raw Script (Tamil/English/Hindi/Telugu or PDF/DOCX)
+                    │
+                    ▼
+          [LanguageManager Engine]
+                    │
+                    ▼
+         [Gemini LLM Breakdown]
+  Locations • Time • Weather • Characters • Props • Actions • Dialogues
+                    │
+                    ▼
+    [Cinematographer Prompt Synthesizer]
+  Translates dramatic action + dialogue emotion into visual English cues
+                    │
+                    ▼
+      [Stability AI SDXL Rendering]
+  16:9 Widescreen Storyboard Frame (1344x768)
+                    │
+                    ▼
+    [React Viewfinder / Storyboard Deck]
 ```
 
 ---
 
 ## 📄 License
 
-This project is currently unlicensed. All rights reserved by the author.
-
----
-
-## 🙏 Acknowledgements
-
-- [Google Gemini](https://deepmind.google/technologies/gemini/) for multilingual AI reasoning
-- [Stability AI](https://stability.ai/) for SDXL image generation
-- [Streamlit](https://streamlit.io/) for the rapid UI framework
+MIT License. Created for filmmakers, directors, and AI cinema storytellers.
